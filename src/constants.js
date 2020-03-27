@@ -1,4 +1,5 @@
 //Navigation
 export const routerPath = {
-	home: '/'
+    home: '/',
+    team: '/joukkue'
 }

@@ -3,7 +3,6 @@
  */
 
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 import logo from '../../assets/cheerLogo.png'
 
 const Home = props => {
@@ -25,4 +24,4 @@ const Home = props => {
     )
 }
 
-export default withRouter((Home))
+export default (Home)
