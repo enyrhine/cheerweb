@@ -29,6 +29,12 @@
 		}
 	}
 
+	@if ($view == small-device) {
+		@media (max-width: 48em) {
+			@content; 
+		}
+	}
+
 	@if ($view == desktop) {
 		@media (min-width: 75em) {
 			@content; // 1200px

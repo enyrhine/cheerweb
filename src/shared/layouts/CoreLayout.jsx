@@ -7,18 +7,24 @@ import {
 } from 'react-router-dom'
 import { routerPath } from '../../constants'
 import logo from '../../assets/cheerLogo.png'
+import MenuComponent from '../components/Menu'
 
 const Home = lazy(() => import('../../components/Home'))
 const Team = lazy(() => import('../../components/Team'))
 
 const CoreLayout = props => {
+    const menuItems = ['Etusivu', 'Joukkueet', 'Työkalut']
     return (
         <div className="app-core">
             <header className="App-header">
                 <img src={logo} className="img-logo" alt="logo" />
-                <p>Etusivu</p>
-                <p>Joukkueet</p>
-                <p>Työkalut</p>
+                <div className="menu-items">
+                    <p>Etusivu</p>
+                    <p>Joukkueet</p>
+                    <p>Työkalut</p>
+                </div>
+                <MenuComponent>{menuItems}</MenuComponent>
+
             </header>
             <main>{props.children}</main>
         </div>

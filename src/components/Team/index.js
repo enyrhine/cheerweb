@@ -11,9 +11,7 @@ const Team = props => {
         <div>
             <div className="main-container">
                 <h1>Cheerapp suunnittele <br />oma joukkueesi</h1>
-                
             </div>
-            
         </div>
     )
 }

@@ -20,4 +20,17 @@
     opacity: 0.8;
     cursor: pointer;
   }
+
+  .menu-items {
+      display: flex;
+    @include breakpoint(small-device) {
+        display: none;
+      }
+  }
+  .menu-container {
+      display: none;
+      @include breakpoint(small-device) {
+        display: initial;
+      }
+  }
 }
