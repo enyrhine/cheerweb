@@ -17,6 +17,8 @@ const CoreLayout = props => {
             <header className="App-header">
                 <img src={logo} className="img-logo" alt="logo" />
                 <p>Etusivu</p>
+                <p>Joukkueet</p>
+                <p>Työkalut</p>
             </header>
             <main>{props.children}</main>
         </div>

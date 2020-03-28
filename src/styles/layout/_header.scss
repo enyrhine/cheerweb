@@ -1,0 +1,23 @@
+.App-header {
+  display: flex;
+  flex-direction: row;
+  background-color: $backgroundColor;
+  align-items: center;
+  justify-content: flex-start;
+  color: $red;
+  p {
+    margin: 0rem 6rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $red;
+    cursor: pointer;
+  }
+
+  .img-logo {
+    width: 6.4rem;
+    margin: 2.8rem;
+    border-radius: 1.4rem;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}

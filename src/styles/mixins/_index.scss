@@ -18,13 +18,13 @@
 	}
 
 	@if ($view == tab-port) {
-		@media (min-width: 37.5em) {
+		@media (min-width: 37.5em) and (max-width: 56.25em) {
 			@content; // 600px
 		}
 	}
 
 	@if ($view == tab-land) {
-		@media (min-width: 56.25em) {
+		@media (min-width: 56.25em) and (max-width: 75em) {
 			@content; // 900px
 		}
 	}
