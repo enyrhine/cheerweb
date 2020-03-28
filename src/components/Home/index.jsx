@@ -9,9 +9,9 @@ const Home = props => {
 
 
     return (
-        <div>
-            <div className="main-container">
-                <h1>Cheerapp suunnittele <br />oma joukkueesi</h1>
+        <div className="home">
+            <div className="home-title">
+                <h1>Cheerapp <br/> suunnittele <br/> oma joukkueesi</h1>
                 <img src={logo} alt="logo-background" />
             </div>
             <div className="home-box">

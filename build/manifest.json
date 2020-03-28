@@ -1,0 +1,15 @@
+{
+    "name": "Cheer_App",
+    "short_name": "CheerApp",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A simply cheer app.",
+    "icons": [
+        {
+            "src": "cheerLogo.png",
+            "sizes": "48x48",
+            "type": "image/png"
+        }
+    ]
+}

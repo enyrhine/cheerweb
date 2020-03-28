@@ -1,0 +1,61 @@
+//
+// Typography
+//
+
+:root {
+    font-size: 62.5%; // 1rem = 10px // 10px/16px = 62.5%
+}
+
+* {
+	box-sizing: border-box;
+}
+
+// Make scrolling behaviors smooth on mobile devices
+body {
+	-webkit-overflow-scrolling: touch;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+div,
+p,
+span,
+ul,
+li,
+input,
+label,
+button {
+	font-family: Roboto;
+	margin: 0;
+	display: block;
+}
+
+// Force our app to have default font size
+// So that UI library will not override it
+p,
+span,
+textarea,
+label,
+ul {
+	font-size: $normal-font-size;
+	outline: none;
+
+	&.large {
+		font-size: $big-font-size;
+	}
+}
+
+p {
+	letter-spacing: 0.02rem;
+	color: $black;
+	font-size: $small-font-size;
+	font-weight: 400;
+}
+
+// General error message
+.error {
+	color: $red;
+}
