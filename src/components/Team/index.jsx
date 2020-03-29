@@ -1,16 +1,15 @@
-/**
- * Created by Elsa
- */
 
 import React from 'react'
+import NewTeamForm from './NewTeamForm'
 
 const Team = props => {
 
 
     return (
         <div>
-            <div className="main-container">
+            <div className="team-container">
                 <h1>Cheerapp suunnittele <br />oma joukkueesi</h1>
+                <NewTeamForm />
             </div>
         </div>
     )
