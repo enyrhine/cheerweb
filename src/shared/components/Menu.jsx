@@ -1,13 +1,15 @@
 
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 const MenuComponent = props => {
-    const { className, children } = props
+    const { className, children, routes } = props
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     let selectClass = ['menu']
+    let history = useHistory()
 
     if (className) {
         selectClass.push(className)
@@ -21,14 +23,20 @@ const MenuComponent = props => {
         setAnchorEl(null)
     }
 
+    const handleRouting = event => {
+        history.push(event)
+        setAnchorEl(event.currentTarget);
+    }
+
     const renderMenuItems = () => {
-        if(!children) return null
-        return(
-        children.map((item, index) => {
-            return (
-                <MenuItem key={index} onClick={handleClose}>{item}</MenuItem>
-            )
-        })
+        if (!children) return null
+        return (
+            children.map((item, index) => {
+                if (!routes[index]) return null
+                return (
+                    <MenuItem key={index} onClick={() => handleRouting(routes[index])}>{item}</MenuItem>
+                )
+            })
         )
     }
 
