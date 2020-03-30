@@ -7,7 +7,7 @@ const Team = props => {
     return (
         <div>
             <div className="team-container">
-                <h1>Cheerapp suunnittele <br />oma joukkueesi</h1>
+                <h1>Lisää uusi joukkue</h1>
                 <NewTeamForm />
                 <h1>Joukkueet</h1>
                 <Teams/>

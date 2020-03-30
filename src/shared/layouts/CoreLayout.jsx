@@ -39,7 +39,7 @@ const CoreLayout = props => {
                 <div className="menu-items">
                     <p onClick={goToFrontPage}>Etusivu</p>
                     <p onClick={goToTeamPage}>Joukkueet</p>
-                    <p onClick={goToToolsPage}>Työkalut</p>
+                    {/* <p onClick={goToToolsPage}>Työkalut</p> */}
                 </div>
                 <MenuComponent routes={menuRoutes}>{menuItems}</MenuComponent>
 

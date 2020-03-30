@@ -6,7 +6,6 @@ import firebase from 'firebase/app'
 const NewTeamForm = props => {
     var db = firebase.firestore()
     
-
     const renderLevels = () => {
         const levels = [1, 2, 3, 4, 5, 6]
         return levels.map(level => {
@@ -20,7 +19,7 @@ const NewTeamForm = props => {
             level: values.level
         })
         .then(function(docRef) {
-            console.log("Document written with ID: ", docRef.id);
+            console.log("Add notification here ", docRef.id);
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
