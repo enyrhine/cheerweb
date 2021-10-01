@@ -1,5 +1,5 @@
 # cheerweb
-Web application for cheer club to manage teams and qualifying practises. 
+To be a web application for cheer club to manage teams and qualifying practises. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
