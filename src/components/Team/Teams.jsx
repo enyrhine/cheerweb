@@ -5,16 +5,19 @@ import { firebaseApp } from '../../App'
 const Teams = () => {
   const [teams, setTeams] = useState([])
 
-  const db = getFirestore(firebaseApp)
-
-  const getTeams = async () => {
-    const snapshot = await getDocs(collection(db, 'teams'))
-    return snapshot.docs
-  }
-
   useEffect(() => {
-    getTeams().then(res => setTeams(res))
-  })
+    const db = getFirestore(firebaseApp)
+
+    const getTeams = async () => {
+      try {
+        const snapshot = await getDocs(collection(db, 'teams'))
+        setTeams(snapshot.docs)
+      } catch (e) {
+        console.error('Error getting teams data: ', e)
+      }
+    }
+    getTeams()
+  }, [])
 
   const renderTeams = () => {
     return teams.map(team => {
