@@ -1,42 +1,33 @@
 import { hot } from 'react-hot-loader/root'
-import React, { Component, Suspense } from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import RenderSwitchCore from './shared/layouts/CoreLayout'
-// import firebase from 'firebase/app'
-// import 'firebase/firestore'
+import { initializeApp } from 'firebase/app'
+import 'firebase/firestore'
 
-const firebase = require("firebase");
-require("firebase/firestore");
+// Initialize Firebase
+var firebaseConfig = {
+  apiKey: process.env.REACT_APP_FIREBASE_CONFIG_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_CONFIG_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_CONFIG_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_CONFIG_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_CONFIG_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_CONFIG_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_CONFIG_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_CONFIG_MEASUREMENT_ID,
+}
+
+export const firebaseApp = initializeApp(firebaseConfig)
 class App extends Component {
-
   render() {
-
-    var firebaseConfig = {
-      apiKey: "AIzaSyA2bEMqGIXdSF6e2CTHIkXMWWHaZO6kVp0",
-      authDomain: "cheerapp-3e3e8.firebaseapp.com",
-      databaseURL: "https://cheerapp-3e3e8.firebaseio.com",
-      projectId: "cheerapp-3e3e8",
-      storageBucket: "cheerapp-3e3e8.appspot.com",
-      messagingSenderId: "197931668199",
-      appId: "1:197931668199:web:0df100237295b933728842",
-      measurementId: "G-FCSYMMZY0N"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-
-    // export var dataBase = firebase.firestore();
-
     return (
       <div className="App">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Router>
-            <RenderSwitchCore />
-          </Router>
-        </Suspense>
+        <Router>
+          <RenderSwitchCore />
+        </Router>
       </div>
-    );
+    )
   }
 }
 
-export default hot(App);
+export default hot(App)
