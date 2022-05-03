@@ -9,13 +9,12 @@ const Teams = () => {
 
   const getTeams = async () => {
     const snapshot = await getDocs(collection(db, 'teams'))
-    console.log(snapshot)
     return snapshot.docs
   }
 
   useEffect(() => {
     getTeams().then(res => setTeams(res))
-  }, [])
+  })
 
   const renderTeams = () => {
     return teams.map(team => {

@@ -1,5 +1,5 @@
 import { hot } from 'react-hot-loader/root'
-import React, { Component, Suspense } from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import RenderSwitchCore from './shared/layouts/CoreLayout'
 import { initializeApp } from 'firebase/app'
