@@ -4,7 +4,7 @@ import { firebaseApp } from '../../App'
 import { useTeams } from '../../contexts/teamContext'
 
 const Teams = () => {
-  const [teams, setTeams] = useTeams([])
+  const [teams, setTeams] = useTeams()
 
   useEffect(() => {
     const db = getFirestore(firebaseApp)
