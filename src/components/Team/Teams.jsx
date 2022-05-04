@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import { firebaseApp } from '../../App'
+import { useTeams } from '../../contexts/teamContext'
 
 const Teams = () => {
-  const [teams, setTeams] = useState([])
+  const [teams, setTeams] = useTeams([])
 
   useEffect(() => {
     const db = getFirestore(firebaseApp)

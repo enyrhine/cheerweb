@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import RenderSwitchCore from './shared/layouts/CoreLayout'
 import { initializeApp } from 'firebase/app'
 import 'firebase/firestore'
+import TeamsProvider from './contexts/teamContext'
 
 // Initialize Firebase
 var firebaseConfig = {
@@ -23,7 +24,9 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <RenderSwitchCore />
+          <TeamsProvider>
+            <RenderSwitchCore />
+          </TeamsProvider>
         </Router>
       </div>
     )
