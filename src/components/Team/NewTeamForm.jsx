@@ -3,8 +3,10 @@ import { Formik, Field } from 'formik'
 import * as Yup from 'yup'
 import { addDoc, collection, getFirestore } from 'firebase/firestore'
 import { firebaseApp } from '../../App'
+import { useTeams } from '../../contexts/teamContext'
 
 const NewTeamForm = props => {
+  const [teams, setTeams] = useTeams()
   var db = getFirestore(firebaseApp)
 
   const renderLevels = () => {
@@ -24,8 +26,8 @@ const NewTeamForm = props => {
         name: values.name,
         level: values.level,
       })
-      // add snackbar message
-      // ADD here context for teams tms
+      // add snackbar message and loader
+      setTeams([...teams, {id: docRef.id, name: values.name, level: values.level }])
       console.log('Document written with ID:  ', docRef.id)
     } catch (e) {
       // add errormessage in snackbar
